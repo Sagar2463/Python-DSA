@@ -11,17 +11,22 @@ matrix2 = [
     [3, 2, 1]
 ]
 
-# Initialize an empty result matrix outside the loops
-matrix3 = []
+matrix3=[]
 
-# Outer loop: Iterate through each row
-for i in range(len(matrix1)):  # i is the row index
-    trow = []  # Initialize a temporary row for the result
-    for j in range(len(matrix1[0])):  # j is the column index
-        # Perform element-wise addition
-        trow.append(matrix1[i][j] + matrix2[i][j])
-    matrix3.append(trow)  # Append the completed row to matrix3
+def matrix_Add (x,y):
+    global matrix3
+    # Check if matrices are the same size
+    if len(x) != len(y) or len(x[0]) != len(y[0]):
+      print("Matrices are not the same size")
+    else:
+        # Add corresponding elements together
+        for i in range(len(x)):
+            row = []
+            for j in range(len(x[0])):
+                row.append(x[i][j] + y[i][j])
+            matrix3.append(row)  
 
-# Print the resulting matrix
-for row in matrix3:
-    print(row)
+matrix_Add(matrix1,matrix2)
+print(matrix3)      
+
+
