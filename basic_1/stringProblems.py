@@ -16,3 +16,51 @@
 #solutions
 
 #solution1
+s = "sagar kumar"
+def reverse(s):
+ return s[::-1]
+print(reverse(s))
+
+#solution 2
+r="racecar"
+def pardom(s):
+ p= s[::-1]
+ if s == p :
+  return True
+ else:
+  return False
+print(pardom(r))
+
+#solution 3
+def common(s):
+ count = 0
+ for char in s:
+  if char in 'aeiou':
+   count += 1
+ return count
+print(common(s))
+
+def common2(s):
+ vowels=""
+ count=0
+ for i in range(len(s)):
+  if s[i]== 'a' or s[i]== 'e' or s[i]== 'i' or s[i]== 'o' or s[i]== 'u':
+   count += 1
+   vowels+= s[i]
+   vowels.split()
+ return f"{count},({",".join(vowels)})"
+print(common2(s))
+#solution 4
+def count_dict(s):
+ dict={}
+ for char in s:
+  if char in dict:
+   dict[char] += 1
+  else:
+   dict[char] = 1
+ return dict
+print(count_dict(s))
+#solution 5
+
+
+
