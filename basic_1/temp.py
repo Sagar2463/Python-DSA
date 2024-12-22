@@ -85,6 +85,21 @@ def hullproblem(strArr):
     return full_hull
 
 print(hullproblem(string))
+s="dsndnsncnkcn"
+
+def repe(s):
+    max=""
+    length=len(s)
+    for i in range(length):
+        for j in range(i+2,length+1):
+            slice_p=s[i:j]
+            if s.count(slice_p)>1 and len(slice_p)>len(max):
+                max=slice_p
+    if max:
+        return max
+    else:
+        return "No Repeated Substring Found"
 
 
+print(repe(s))
 
