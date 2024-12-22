@@ -59,3 +59,32 @@ def recursion_challange(num):
         return num * recursion_challange(num-1)
 
 print(recursion_challange(8))
+string = ("(2,3)", "(4,5)", "(5,7)", "(8,0)")
+def hullproblem(strArr):
+    points = [tuple(map(int, p.strip('() ').split(','))) for p in strArr]
+
+   
+    points= sorted(set(points))
+
+    def cross(a,o,b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+     
+    upper =[]
+    lower=[]
+    for p in points:
+        while len(lower)>=2 and cross(lower[-2],lower[-1],p)<=1:
+            lower.pop()
+        lower.append(p)
+
+    for p in reversed(points):
+        while len(upper)>=2 and cross(upper[-2],upper[-1],p)<=1:
+            upper.pop()
+        upper.append(p)
+    
+    full_hull=lower[:-1]+upper[:-1]
+    return full_hull
+
+print(hullproblem(string))
+
+
+
