@@ -1,0 +1,1 @@
+points = [tuple(map(int, p.strip('() ').split(','))) for p in strArr]

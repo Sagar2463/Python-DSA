@@ -61,6 +61,31 @@ def count_dict(s):
  return dict
 print(count_dict(s))
 #solution 5
+k="aaabbbccccc"
+def counter_rep(k):
+    # Initialize an empty dictionary to store character counts
+    empty = {}
+    
+    # Iterate through each character in the string
+    for char in k:
+        if char in empty:
+            empty[char] += 1
+        else:
+            empty[char] = 1
+    
+    # Build the compressed string
+    newstr = ""
+    for char, count in empty.items():
+        newstr +=f"{char}{count}"
+    
+    # Return the compressed string if it's shorter than the original, otherwise return the original
+    return newstr if len(newstr) < len(k) else k
 
+# Test the function with the provided example
+k = "aaabbbccccc"
+print(counter_rep(k))  # Output: "a3b3c5"
+
+ 
+ 
 
 
